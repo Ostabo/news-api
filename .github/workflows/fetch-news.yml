@@ -1,0 +1,49 @@
+name: Fetch News
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */2 * * *'
+jobs:
+  fetch-data:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        country: [ au, de, fr, gb, it, nl, ru, us ]
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+
+      - name: Fetch API Data - ${{ matrix.country }}📦
+        uses: JamesIves/fetch-api-data-action@releases/v1
+        with:
+          ENDPOINT: https://newsapi.org/v2/top-headlines?country=${{ matrix.country }}&apiKey=${{ secrets.NEWS_API_KEY }}
+          retry: true
+
+      - name: Stage - ${{ matrix.country }}🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GIT_CONFIG_NAME: GitHub Actions Bot
+          GIT_CONFIG_EMAIL: <>
+          BRANCH: stage
+          FOLDER: fetch-api-data-action
+          TARGET_FOLDER: ${{ matrix.country }}
+          SINGLE_COMMIT: true
+
+  merge:
+    if: ${{ always() }}
+    needs: fetch-data
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+
+      - name: Merge 🚀
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          git fetch origin
+          git checkout gh-pages
+          git merge --allow-unrelated-histories -X theirs origin/stage
+          git push --force origin gh-pages
