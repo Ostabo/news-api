@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News API Cache</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            font-size: 1.5em;
+            background: #2f2f2f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        a {
+            display: block;
+            color: white;
+            margin: 1em;
+            text-decoration: none;
+            text-align: center;
+        }
+        a:hover {
+            color: lightsteelblue;
+        }
+        div {
+            width: 50%;
+            height: 100%;
+            margin: 2em;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        .news {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 1em;
+            color: lightblue;
+        }
+    </style>
+    <script>
+        const countries = [ 'au', 'de', 'fr', 'gb', 'it', 'nl', 'ru', 'us']
+        function getLink(country) {
+            return `<a href="https://ostabo.software/news-api/${country}/data.json">${country.toUpperCase()} ${getFlagEmoji(country)}</a>`
+        }
+
+        function getFlagEmoji(countryCode) {
+            const codePoints = countryCode.toUpperCase().split("").map((char) => 127397 + char.charCodeAt(0));
+            return String.fromCodePoint(...codePoints);
+        }
+
+        function init() {
+            const div = document.querySelector('div')
+            div.innerHTML = countries.map(getLink).join('')
+        }
+    </script>
+</head>
+<body onload="init()">
+<a href="https://newsapi.org" class="news">News API</a>
+<div>
+</div>
+</body>
+</html>
