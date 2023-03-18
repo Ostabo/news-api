@@ -10,6 +10,16 @@ Note that GitHub Actions will be delayed, depending on current load. Therefore, 
 
 ```
 GET https://ostabo.software/news-api/{country-code}/data.json
-
-GET https://ostabo.software/news-api/us/data.json --> US
 ```
+
+### Available countries
+<table>
+<tr><td>🇦🇺</td><td><a>https://ostabo.software/news-api/au/data.json</a></td></tr>
+<tr><td>🇩🇪</td><td><a>https://ostabo.software/news-api/de/data.json</a></td></tr>
+<tr><td>🇫🇷</td><td><a>https://ostabo.software/news-api/fr/data.json</a></td></tr>
+<tr><td>🇬🇧</td><td><a>https://ostabo.software/news-api/gb/data.json</a></td></tr>
+<tr><td>🇮🇹</td><td><a>https://ostabo.software/news-api/it/data.json</a></td></tr>
+<tr><td>🇳🇱</td><td><a>https://ostabo.software/news-api/nl/data.json</a></td></tr>
+<tr><td>🇷🇺</td><td><a>https://ostabo.software/news-api/ru/data.json</a></td></tr>
+<tr><td>🇺🇸</td><td><a>https://ostabo.software/news-api/us/data.json</a></td></tr>
+</table>
