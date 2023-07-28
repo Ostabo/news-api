@@ -9,18 +9,18 @@ Note that GitHub Actions will be delayed, depending on current load. Therefore, 
 ## Usage
 
 ```
-GET https://ostabo.software/news-api/{country-code}/data.json
+GET https://ostabo.github.io/news-api/{country-code}/data.json
 ```
 
 ### Available countries
 | Country  | URL                                           |
 |:--------:|:----------------------------------------------|
-|   🇦🇺   | https://ostabo.software/news-api/au/data.json |
-|   🇩🇪   | https://ostabo.software/news-api/de/data.json |
-|   🇫🇷   | https://ostabo.software/news-api/fr/data.json |
-|   🇬🇧   | https://ostabo.software/news-api/gb/data.json |
-|   🇮🇹   | https://ostabo.software/news-api/it/data.json |
-|   🇳🇱   | https://ostabo.software/news-api/nl/data.json |
-|   🇷🇺   | https://ostabo.software/news-api/ru/data.json |
-|   🇺🇸   | https://ostabo.software/news-api/us/data.json |
+|   🇦🇺   | https://ostabo.github.io/news-api/au/data.json |
+|   🇩🇪   | https://ostabo.github.io/news-api/de/data.json |
+|   🇫🇷   | https://ostabo.github.io/news-api/fr/data.json |
+|   🇬🇧   | https://ostabo.github.io/news-api/gb/data.json |
+|   🇮🇹   | https://ostabo.github.io/news-api/it/data.json |
+|   🇳🇱   | https://ostabo.github.io/news-api/nl/data.json |
+|   🇷🇺   | https://ostabo.github.io/news-api/ru/data.json |
+|   🇺🇸   | https://ostabo.github.io/news-api/us/data.json |
 
