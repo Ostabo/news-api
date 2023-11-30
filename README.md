@@ -1,3 +1,6 @@
+# DEPRECATED
+No more updates since 30.11.2023
+
 # news-api
 
 This Repo caches top headlines from newsapi.org  
